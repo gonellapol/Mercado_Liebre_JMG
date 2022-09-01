@@ -7,6 +7,10 @@ app.listen(process.env.PORT || 3030, function(){
     console.log("Servidor funcionando en puerto3030");
 });
 
+app.listen(3001, () =>
+   console.log('Servidor corriendo')
+);
+
 app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/home.html');
 });

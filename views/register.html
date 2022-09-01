@@ -15,12 +15,12 @@
                     <img src="images/logo-mercado-liebre.svg" alt="Logo de MercadoLiebre">
                 </div>
                 <div class="form" action="#" method="GET">
-                    <div class="input">Buscar productos, marcas y más</div>
+                    <input type="text" class="input" name="user" placeholder="Buscar productos, marcas y más">
                     <div class="submit"><i class="fa fa-search"></i></div>
                 </div>
-                <p><i class="fas fa-hand-holding-usd"></i>Comprá en cuotas y sin tarjeta de crédito</p>
+                <p class="cuotas"><i class="fas fa-hand-holding-usd"></i>Comprá en cuotas y sin tarjeta de crédito</p>
             </div>
-            <nav>
+            <nav class="menu-nav">
                 <ul>
                     <li><a href="#">Ofertas</a></li>
                     <li><a href="#">Tiendas Oficiales</a></li>
@@ -31,109 +31,94 @@
                     <li><a href="/register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
                     <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
                     <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+                    
                 </ul>
             </nav>
             <div class="burger-menu">
                 <i class="fa fa-bars burger"></i>
             </div>
         </header>
-
-<main>
-        <form action="/" method="GET">
-            <p>
-                <input type="text" name="nombre" placeholder="Nombre y Apellido" >
-            </p>
-            <p>
-                <input type="text" name="usuario" placeholder="Nombre de usuari@">
-            </p>
-            <p>
+        
+        <main class="register">
+            <form class="registro" action="/" method="GET">
+                <input type="text" name="name" placeholder="Nombre y apellido">
+                <br>
+                <input type="text" name="user" placeholder="Nombre de usuario">
+                <br>
                 <input type="email" name="email" placeholder="E-mail">
-            </p>
-            
-            <p>
-                <label>Fecha Nacimiento:</label>
-            </p>
-            <p>
-             <input type="date" name="nacimiento" placeholder="dd/mm/yyyy">
-            </p>
-            <p>
+                <br>
+                <label id=label_nac for="birth_date"><b>Fecha de nacimiento</b></label>
+                <br>
+                <input class="fecha" type="date" name="birth_date" id="birth_date">
+                <br>
+                <input type="text" name="addres" placeholder="Domicilio">
+                <h4>Perfil del usuario</h4>
+                <div class="profile">
+                    <input type="radio" name="profile" value="buy" id="buy">
+                    <label for="buy">Comprador</label>
+                    <input type="radio" name="profile" value="sell" id="sell">
+                    <label for="sell">Vendedor</label>
+                </div>
+
+                <h4>Intereses</h4>
+                <div class="interests">
+                    <div>
+                        <input type="checkbox" name="interests" value="a" id="a">
+                        <label for="a">Electro</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="b" id="b">
+                        <label for="b">Moda</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="c" id="c">
+                        <label for="c">Hogar</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="d" id="d">
+                        <label for="d">Juguetería</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="interests" value="e" id="e">
+                        <label for="e">Vida sana</label>
+                    </div>
+                </div>
                 
-                <input type="text" name="domicilio" placeholder="Domicilio">
-            </p>
-            <p>
-                <label>Perfil del usuario:</label>
-            </p>
-            <p>    
-                <input type="radio" name="perfil" value="Comprador">
-                <label for="Comprador">Comprador </label>
-                <input type="radio" name="perfil" value="Vendedor" checked>
-                <label for="Vendedor">Vendedor </label>
-            </p>
-            <p>
-                <label>Intereses:</label>
-            </p>
-            <p>
-            <input type="checkbox" name="intereses" value="electro" id="electro">
-            <label for="electro">Electro</label>
-            </p>
-           
-            <p>
-            <input type="checkbox" name="intereses" value="moda" id="moda">
-            <label for="moda">Moda</label>
-            </p>
-            <p>
-            <input type="checkbox" name="intereses" value="hogar" id="hogar">
-            <label for="hogar">Hogar</label>
-             </p>
-            <p>
-            <input type="checkbox" name="intereses" value="vidasana" id="vidasana">
-            <label for="vidasana">Vida Sana</label>
-            </p>
-            <p>
-            <input type="checkbox" name="intereses" value="jugeteria" id="jugeteria">
-            <label for="jugeteria">Juguetería</label>
-            </p>
-           
-            <p>
-                <label>Subir foto de perfil</label>
-                
-            </p>
-            <p>
-                <input type="file" name="perfil" accept=".jpg" >
-            </p>
-        
-            
-            <p>
-                
-                <input type="password" name="password" placeholder="Contraseña">
-            </p>
-            <p>
-               
-                <input type="password" name="password" placeholder="Confirmar contraseña">
-            </p>
-
-            <p>
-                <button type="submit">Enviar</button>
-                </p>
-
-                <p>
-                    <button type="reset">Borrar</button>
-                    </p>
-
-
-
-        </form>
-
-
-        
-
-    </main>
-
-
-
-        
+                <h4>Elegí tu foto de usuario</h4>
+                <input class="archivo" type="file" name="avatar">
+                <br>
+                <br>
+                <input type="password" name="pass" placeholder="Elegí tu contraseña">
+                <br>
+                <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
+                <br>
+                <br>
+                <input class="boton_enviar" type="submit" value="Enviar">
+                <input class="boton_cancelar" type="reset" value="Borrar">
+                <br>
+                <br>
+            </form>
+        </main>
         <footer>
             
+            <div>
+                <i class="fas fa-credit-card"></i>
+                <h4>Paga con tarjeta o efectivo</h4>
+                <p>Con MercadoLibre tenés cuota sin interés</p>
+            </div>
+            
+            <div>
+                <i class="fas fa-gift"></i>
+                <h4>Envío gratis de los $2.500</h4>
+                <p>Solo por estar registrado tenés envíos graits</p>
+            </div>
+                
+            <div>
+                <i class="fas fa-user-shield"></i>
+                <h4>Seguridad de principio a fin</h4>
+                <p>¿No te gusta? ¡Devolvelo! Estás protegido</p>
+            </div>    
+        
         </footer>
         
     </body>
